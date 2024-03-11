@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Link, useParams, Navigate} from 'react-router-dom';
 import Perks from '../Perks.jsx';
-import PhotosUploader from '../PhotosUploaded.jsx'
+import PhotosUploader from '../PhotosUploader.jsx'
 
 const PlacesPage = () => {
 
@@ -47,7 +47,6 @@ const PlacesPage = () => {
             checkOut,
             maxGuests
         };
-
         return placesObject;
     };
 
