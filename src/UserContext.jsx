@@ -9,18 +9,24 @@ const UserContextProvider = ({children}) => {
     useEffect(() => {
         if(!user)
         {
-            fetch(
-                'http://localhost:4000/profile',
-                {
-                    method: 'GET',
-                    credentials: 'include',
-                }
-            )
-            .then(response => response.json())
-            .then(data => {
-                setUser(data);
-                setReady(true);
-            });
+            try{
+                fetch(
+                    'http://localhost:4000/profile',
+                    {
+                        method: 'GET',
+                        credentials: 'include',
+                    }
+                )
+                .then(response => response.json())
+                .then(data => {
+                    setUser(data);
+                    setReady(true);
+                });
+            }
+            catch(exception)
+            {
+                console.log(exception);
+            }
         }
         else
         {
